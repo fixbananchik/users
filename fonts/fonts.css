@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'SourceCodePro_Regular';
+    src: url('./SourceCodePro-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceCodePro_SemiBold';
+    src: url('./SourceCodePro-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+.text_secondary {
+    font-family: 'SourceCodePro_Regular';
+}
+
+.text_large {
+    font-family: 'SourceCodePro_SemiBold';
+}
+

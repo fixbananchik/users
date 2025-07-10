@@ -1,0 +1,72 @@
+body{
+    background-color: #3b4261;
+    padding: 40px 95px;
+}
+
+.block{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 30px 38px;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.block__header{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-primary);
+}
+
+.line_users{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0.6fr;
+    align-items: center;
+    border-bottom: 1px solid #b9b9b9;
+    padding:20px 0px;
+}
+
+.line_users:last-child{
+    border-bottom: none;
+}
+
+.block__users_list{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.line_users__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #323d72;
+    border-radius: 16px;
+    padding: 10px 20px;
+    border: 3px solid #4756a3;
+    font-family: 'SourceCodePro_Regular';
+    font-size: 14px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.line_users__button:hover{
+    background-color: #4756a3;
+}
+
+.text_additional{
+    font-family: 'SourceCodePro_Regular';
+    font-size: 0px;
+    color: #000000;
+}
+
+.text_additional--active{
+    font-family: 'SourceCodePro_Regular';
+    font-size: 14px;
+    color: #000000;
+}
+
+
+
