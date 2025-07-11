@@ -30,7 +30,9 @@ function renderUsers(){
         company: 'Company',
         phone_number: 'Phone Number',
         email: 'Email',
-        country: 'Country'
+        country: 'Country',
+        gender: 'Gender',
+        ip_address: 'IP address'
     }))
     for(let element of users){
         linesContainer.insertAdjacentHTML('beforeend', generateTemplate(element));
@@ -43,16 +45,18 @@ function renderUsers(){
 }
 
 function filterUsers(){
-    renderUsers(filterGender())
+    renderUsers(filterMale())
 }
 
-function filterGender(){
+function filteMale(){
     return users.filter(user => user.gender === 'Male')
 }
 
 function HandleAdditionalInfo() {
     const additionalInfo = this.nextElementSibling
+    const additionalInfo2 = additionalInfo.nextElementSibling
     additionalInfo.classList.toggle('text_additional--active')
+    additionalInfo2.classList.toggle('text_additional--active')
 }
 
 let users = []
