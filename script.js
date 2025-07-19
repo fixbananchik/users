@@ -62,14 +62,17 @@ function HandleAdditionalInfo() {
 }
 
 function handlePageClick(){
-    
     let currentPage = this.dataset.page
 
     let currentClickedPage = (this.dataset.page - 1) * 4
     renderUsers(users.slice(currentClickedPage, currentClickedPage + 4))
 
     console.log(currentPage)
+    console.log(this)
+    console.log(pagesContainer.children[currentPage-1])
 
+
+    pagesContainer.children[currentPage-1].classList.add('page__button--active')
 }
 
 

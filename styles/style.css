@@ -100,9 +100,9 @@ body{
     margin: 20px;
 }
 
-page__button--active{
-    background-color: #141830;
-    border-color: #2d365a;
+.page__button--active{
+    background-color: #841fd6;
+    border-color: #bf88ff;
     color: #fff;
     font-weight: bold;
 }
