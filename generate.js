@@ -2,6 +2,7 @@ export default function generateTemplate(content){
     return `
         <div class="line_users">
 
+
                 <span class="text_secondary">${content?.User_name}</span>
                 <span class="text_secondary">${content?.company}</span>
                 <span class="text_secondary">${content?.phone_number}</span>

@@ -71,3 +71,39 @@ body{
 
 
 
+.page__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #323d72;
+    border-radius: 16px;
+    padding: 10px 20px;
+    border: 3px solid #4756a3;
+    font-family: 'SourceCodePro_Regular';
+    font-size: 14px;
+    color: #ffffff;
+    margin: 5px;
+    width: 50px;
+}
+
+.page__button:hover{
+    background-color: #4756a3;
+    cursor: pointer;
+}
+
+.pages{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px;
+}
+
+page__button--active{
+    background-color: #141830;
+    border-color: #2d365a;
+    color: #fff;
+    font-weight: bold;
+}
+    

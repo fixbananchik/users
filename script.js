@@ -1,5 +1,5 @@
 import generateTemplate from "./generate.js"
-
+import { PagesTemplate } from "./pages.js"
 
 
 
@@ -7,7 +7,7 @@ function handleJson(data){
     users = data
     console.log('успешно обработан json')
     console.log(data)
-    renderUsers()
+    renderUsers(data)
 
 }
 
@@ -23,7 +23,7 @@ function handleResponse(response){
     response.json().then(handleJson).catch(handleError)
 }
 
-function renderUsers(){
+function renderUsers(users){
     linesContainer.innerHTML = ''
     linesContainer.insertAdjacentHTML('beforeend', generateTemplate({
         User_name: 'User Name',
@@ -31,7 +31,7 @@ function renderUsers(){
         phone_number: 'Phone Number',
         email: 'Email',
         country: 'Country',
-        gender: 'Gender',
+        gender: 'Gender', 
         ip_address: 'IP address'
     }))
     for(let element of users){
@@ -42,11 +42,13 @@ function renderUsers(){
     for(let button of butoons){
         button.addEventListener('click', HandleAdditionalInfo)
     }
+    pagesContainer.innerHTML = ''
+    for(let i = 1; i < 26; i++){
+        pagesContainer.insertAdjacentHTML('beforeend', PagesTemplate(i))
+        pagesContainer.lastElementChild.addEventListener('click', handlePageClick)
+    }
 }
 
-function filterUsers(){
-    renderUsers(filterMale())
-}
 
 function filteMale(){
     return users.filter(user => user.gender === 'Male')
@@ -59,6 +61,18 @@ function HandleAdditionalInfo() {
     additionalInfo2.classList.toggle('text_additional--active')
 }
 
+function handlePageClick(){
+    
+    let currentPage = this.dataset.page
+
+    let currentClickedPage = (this.dataset.page - 1) * 4
+    renderUsers(users.slice(currentClickedPage, currentClickedPage + 4))
+
+    console.log(currentPage)
+
+}
+
+
 let users = []
 
 
@@ -67,4 +81,5 @@ fetch('https://mocki.io/v1/93b29e4b-1ffd-4e99-9b02-a62902e8c792').then(handleRes
 
 const linesContainer = document.querySelector('#block_users')
 const filterButton = document.querySelector('#filter')
+const pagesContainer = document.querySelector('.pages')
 filterButton.addEventListener('click', renderUsers)
